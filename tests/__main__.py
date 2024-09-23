@@ -9,10 +9,10 @@ r=requests.get(URL)
 
 soup= BeautifulSoup(r.content,'html5lib')
 
-#print(soup.prettify()) will print the whole page
+#print(soup.prettify()) will print the whole page. Prettify will adjust formatting
 
 #-------- testing grounds for parsing data (JS) --------  
-print(soup)
+print(soup.prettify())
 #table=soup.find('table', attrs={'class':'relative w-full table-fixed border-collapse'})
 
 #*data=[]
