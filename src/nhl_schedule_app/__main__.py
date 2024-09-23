@@ -12,7 +12,7 @@ page_data=None                               #will contain page data in HTML
 #-------- functions --------
 
 #The getPageData function will scrape/pull all HTML code using the URL parameter
-def getPageData(URL):
+def get_page_data(URL):
     r=requests.get(URL)
     soup= BeautifulSoup(r.content,'html5lib')
     return soup
@@ -20,5 +20,5 @@ def getPageData(URL):
 #ToDo function that will determine which week from schedule for URL
 
 #main
-page_data=getPageData("https://hockey.fantasysports.yahoo.com/hockey/team_games?week=1")
+page_data=get_page_data("https://hockey.fantasysports.yahoo.com/hockey/team_games?week=1")
 print(page_data)
