@@ -19,3 +19,5 @@ def getPageData(URL):
 #ToDo function that will determine which week from schedule for URL
 
 #main
+getPageData()
+print(soup.prettify())
