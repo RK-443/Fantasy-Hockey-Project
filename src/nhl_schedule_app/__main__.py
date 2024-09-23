@@ -13,8 +13,8 @@ page_data=None                               #will contain page data in HTML
 
 #The getPageData function will scrape/pull all HTML code using the URL parameter
 def get_page_data(URL):
-    r=requests.get(URL)
-    soup= BeautifulSoup(r.content,'html5lib')
+    data=requests.get(URL)
+    soup= BeautifulSoup(data.content,'html5lib')
     return soup
 
 #ToDo function that will determine which week from schedule for URL
