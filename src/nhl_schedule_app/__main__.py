@@ -19,5 +19,5 @@ def getPageData(URL):
 #ToDo function that will determine which week from schedule for URL
 
 #main
-getPageData()
+getPageData("https://hockey.fantasysports.yahoo.com/hockey/team_games?week=1")
 print(soup.prettify())
