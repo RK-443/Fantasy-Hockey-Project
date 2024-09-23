@@ -16,5 +16,7 @@ def getPageData(URL):
     r=requests.get(URL)
     soup= BeautifulSoup(r.content,'html5lib')
 
+#ToDo function that will determine which week from schedule for URL
+
 #main
 
