@@ -15,9 +15,10 @@ pageData=None                               #will contain page data in HTML
 def getPageData(URL):
     r=requests.get(URL)
     soup= BeautifulSoup(r.content,'html5lib')
+    return soup
 
 #ToDo function that will determine which week from schedule for URL
 
 #main
-getPageData("https://hockey.fantasysports.yahoo.com/hockey/team_games?week=1")
+pageData=getPageData("https://hockey.fantasysports.yahoo.com/hockey/team_games?week=1")
 print(pageData)
