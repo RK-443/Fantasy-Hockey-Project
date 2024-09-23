@@ -12,8 +12,10 @@ soup= BeautifulSoup(r.content,'html5lib')
 #print(soup.prettify()) will print the whole page. Prettify will adjust formatting
 
 #-------- testing grounds for parsing data (JS) --------  
-print(soup.prettify())
-#table=soup.find('table', attrs={'class':'relative w-full table-fixed border-collapse'})
+#print(soup.prettify())
+
+table=soup.find('table')
+print(table.get_text())
 
 #*data=[]
 #for row in table.find_all('tr'):
