@@ -17,6 +17,10 @@ def get_page_data(URL):
     soup= BeautifulSoup(data.content,'html5lib')
     return soup
 
+#The parse_table function will read & return the required data for schedules
+def parse_table(table_data):
+    return table_data
+
 #ToDo function that will determine which week from schedule for URL
 
 #main
