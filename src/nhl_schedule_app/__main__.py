@@ -17,7 +17,11 @@ def get_page_data(URL):
     soup= BeautifulSoup(data.content,'html5lib')
     return soup
 
-#The parse_table function will read & return the required data for schedules
+#get_all_schedules function will return table of teams and the number of games to play in an array
+    def get_all_schedules():
+        return None
+
+#The parse_table function will read & return the required data for schedules using the table as a parameter
 def parse_table(table_data):
     return table_data
 
