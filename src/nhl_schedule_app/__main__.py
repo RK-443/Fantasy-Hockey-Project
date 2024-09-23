@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 #-------- global variables --------
 URL=None
-soup=None                               #will contain page data in HTML
+soup=BeautifulSoup                               #will contain page data in HTML
 
 
 #-------- functions --------
@@ -19,4 +19,3 @@ def getPageData(URL):
 #ToDo function that will determine which week from schedule for URL
 
 #main
-
