@@ -4,5 +4,9 @@
 import requests
 from bs4 import BeautifulSoup
 
+#-------- global variables --------
+URL=None
+soup=None                               #will contain page data in HTML
+
 
 
