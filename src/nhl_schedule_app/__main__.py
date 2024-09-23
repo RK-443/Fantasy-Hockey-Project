@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 #-------- global variables --------
 URL=None
-soup=BeautifulSoup                               #will contain page data in HTML
+pageData=None                               #will contain page data in HTML
 
 
 #-------- functions --------
@@ -20,4 +20,4 @@ def getPageData(URL):
 
 #main
 getPageData("https://hockey.fantasysports.yahoo.com/hockey/team_games?week=1")
-print(soup.prettify())
+print(pageData)
