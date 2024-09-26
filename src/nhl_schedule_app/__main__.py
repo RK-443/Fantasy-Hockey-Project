@@ -31,4 +31,5 @@ def parse_table(table_data):
 
 #main
 page_data=get_page_data("https://hockey.fantasysports.yahoo.com/hockey/team_games?week=1")
-print(page_data)
+all_schedules=get_all_schedules()
+print(all_schedules)
