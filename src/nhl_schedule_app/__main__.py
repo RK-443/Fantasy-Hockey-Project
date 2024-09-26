@@ -20,7 +20,7 @@ def get_page_data(URL):
 #get_all_schedules function will return table of teams and the number of games to play in an array. Removes first element of array
 def get_all_schedules():
     global_schedule=page_data.find('table')
-    global_schedule.pop(0)                  
+    global_schedule.pop(1)                  
     return global_schedule
 
 #The parse_table function will read & return the required data for schedules using the table as a parameter
