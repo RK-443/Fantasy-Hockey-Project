@@ -5,9 +5,9 @@ import requests
 from bs4 import BeautifulSoup
 
 #-------- global variables --------
-URL=None
+URL=None                                
 page_data=None                               #will contain page data in HTML
-
+all_schedules=None                           #contains weekly schedules of all teams   
 
 #-------- functions --------
 
