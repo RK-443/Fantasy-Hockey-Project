@@ -39,7 +39,7 @@ def get_all_schedules():
         print(team_name)
         #print(cols)
     
-    return table
+    return all_schedules
 
 #The parse_table function will read & return the required data for schedules using the table as a parameter
 def parse_table(table_data):
