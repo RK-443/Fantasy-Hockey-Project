@@ -34,7 +34,7 @@ def get_all_schedules():
         nb_games=row.find('td', {"class":"stat Tst-games"}).text
 
         all_schedules[index][0]=team_name
-        all_schedules[index[1]]=nb_games
+        all_schedules[index][1]=nb_games
 
         print(team_name)
         #print(cols)
