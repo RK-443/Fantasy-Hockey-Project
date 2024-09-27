@@ -1,6 +1,6 @@
 # main file for nhl_schedule_app
 
-#imports
+#-------- imports --------
 import datetime
 import requests
 from bs4 import BeautifulSoup
@@ -13,7 +13,7 @@ all_schedules=[[0]*2 for _ in range(32)]                      #contains weekly s
 
 #-------- functions --------
 
-#The getPageData function will scrape/pull all HTML code using the URL parameter
+#getPageData function will scrape/pull all HTML code using the URL parameter
 def get_page_data(URL):
     data=requests.get(URL)
     soup= BeautifulSoup(data.content,'html5lib')
@@ -39,13 +39,13 @@ def get_all_schedules():
     
     return all_schedules
 
-#The parse_table function will read & return the required data for schedules using the table as a parameter
+#parse_table function will read & return the required data for schedules using the table as a parameter
 def parse_table(table_data):
     return table_data
 
 #ToDo function that will determine which week from schedule for URL
 
-#main
+#-------- main --------
 page_data=get_page_data("https://hockey.fantasysports.yahoo.com/hockey/team_games?week=1")
 all_schedules=get_all_schedules()
 print(all_schedules)
