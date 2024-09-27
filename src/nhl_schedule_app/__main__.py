@@ -48,14 +48,15 @@ def get_url_schedule(input_week=-1):
     current_date=datetime.datetime.now()                                                #will save current date
     output_week=None                                                
 
-    if input_week==-1 and current_date.isocalendar().week<41:
+    if input_week==-1:
         current_date=datetime.datetime.now  
     elif input_week>=1 and input_week<=25:
         URL="https://hockey.fantasysports.yahoo.com/hockey/team_games?week="+str(input_week)
     else:
         print("The entered week is not valid. Must be within 1-25")
 
-    return None
+    return URL
+
 
 #-------- main --------
 page_data=get_page_data("https://hockey.fantasysports.yahoo.com/hockey/team_games?week=1")
