@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 #-------- global variables --------
 URL=None                                
 page_data=None                                  #will contain page data in HTML (soup)
-all_schedules=[[0]*2]*32                        #contains weekly schedules of all teams. Initialized 2D array with 2 col & 32 rows for 32 teams
+all_schedules=[[0]*2 for _ in range(32)]                      #contains weekly schedules of all teams. Initialized 2D array with 2 col & 32 rows for 32 teams
 
 
 #-------- functions --------
@@ -28,13 +28,13 @@ def get_all_schedules():
 
     index=0
 
-    for row in rows:
-        
+    for row in rows: 
         team_name=row.find('td', {"class":"Alt Last name first Tst-team"}).text
         nb_games=row.find('td', {"class":"stat Tst-games"}).text
 
         all_schedules[index][0]=team_name
         all_schedules[index][1]=nb_games
+        
         index+=1
     
     return all_schedules
