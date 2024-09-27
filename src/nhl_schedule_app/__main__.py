@@ -43,7 +43,9 @@ def get_all_schedules():
 def parse_table(table_data):
     return table_data
 
-#ToDo function that will determine which week from schedule for URL
+#get_url function will return the url of the current the week (if before oct 7 by default week will be 1)
+def get_url():
+    return None
 
 #-------- main --------
 page_data=get_page_data("https://hockey.fantasysports.yahoo.com/hockey/team_games?week=1")
