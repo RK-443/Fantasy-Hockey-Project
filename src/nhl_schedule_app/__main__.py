@@ -35,9 +35,7 @@ def get_all_schedules():
 
         all_schedules[index][0]=team_name
         all_schedules[index][1]=nb_games
-
-        print(team_name)
-        #print(cols)
+        index+=1
     
     return all_schedules
 
