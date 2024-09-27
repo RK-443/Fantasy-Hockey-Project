@@ -26,7 +26,9 @@ def get_all_schedules():
     table_body=table.find('tbody')
 
     rows=table_body.find_all('tr')
-
+    for row in rows:
+        cols=row.find('td', {"class":"Alt Last name first Tst-team"})
+        print(cols)
     
     return table
 
@@ -39,4 +41,4 @@ def parse_table(table_data):
 #main
 page_data=get_page_data("https://hockey.fantasysports.yahoo.com/hockey/team_games?week=1")
 all_schedules=get_all_schedules()
-print(type(all_schedules))
+print(all_schedules)
