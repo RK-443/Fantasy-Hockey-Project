@@ -24,11 +24,20 @@ def get_all_schedules():
 
     table=page_data.find('table') 
     table_body=table.find('tbody')
-
     rows=table_body.find_all('tr')
+
+    index=0
+
     for row in rows:
-        cols=row.find('td', {"class":"Alt Last name first Tst-team"})
-        print(cols)
+        
+        team_name=row.find('td', {"class":"Alt Last name first Tst-team"}).text
+        nb_games=row.find('td', {"class":"stat Tst-games"}).text
+
+        all_schedules[index][0]=team_name
+        all_schedules[index[1]]=nb_games
+
+        print(team_name)
+        #print(cols)
     
     return table
 
