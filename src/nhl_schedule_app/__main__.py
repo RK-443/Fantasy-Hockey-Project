@@ -18,8 +18,7 @@ def get_page_data(URL):
     soup= BeautifulSoup(data.content,'html5lib')
     return soup
 
-#get_all_schedules function will return table of teams and the number of games to play in an array. Removes first element of array
-#need to find way of splitting string from global_schedule using digits in order to return proper array
+#get_all_schedules function will return table of teams and the number of games to play in an array. 2x32
 def get_all_schedules():
 
     table=page_data.find('table') 
@@ -29,8 +28,8 @@ def get_all_schedules():
     index=0
 
     for row in rows: 
-        team_name=row.find('td', {"class":"Alt Last name first Tst-team"}).text
-        nb_games=row.find('td', {"class":"stat Tst-games"}).text
+        team_name=row.find('td', {"class":"Alt Last name first Tst-team"}).text         #stores team name of the row
+        nb_games=row.find('td', {"class":"stat Tst-games"}).text                        #stores nb of games played 
 
         all_schedules[index][0]=team_name
         all_schedules[index][1]=nb_games
