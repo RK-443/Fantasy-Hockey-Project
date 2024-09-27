@@ -45,9 +45,13 @@ def parse_table(table_data):
 
 #get_url function will return the url of the current the week (if before oct 7 by default week will be 1)
 def get_url():
+    current_date=datetime.datetime.now()
+    
+    
+
     return None
 
 #-------- main --------
 page_data=get_page_data("https://hockey.fantasysports.yahoo.com/hockey/team_games?week=1")
 all_schedules=get_all_schedules()
-print(all_schedules)
+#print(all_schedules)
