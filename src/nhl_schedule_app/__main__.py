@@ -6,8 +6,9 @@ from bs4 import BeautifulSoup
 
 #-------- global variables --------
 URL=None                                
-page_data=None                               #will contain page data in HTML
-all_schedules=None                           #contains weekly schedules of all teams   
+page_data=None                               #will contain page data in HTML (soup)
+all_schedules=None                           #contains weekly schedules of all teams 
+
 
 #-------- functions --------
 
@@ -20,9 +21,14 @@ def get_page_data(URL):
 #get_all_schedules function will return table of teams and the number of games to play in an array. Removes first element of array
 #need to find way of splitting string from global_schedule using digits in order to return proper array
 def get_all_schedules():
+
     table=page_data.find('table') 
     table_body=table.find('tbody')
-    return table_body
+
+    rows=table_body.find_all('tr')
+
+    
+    return table
 
 #The parse_table function will read & return the required data for schedules using the table as a parameter
 def parse_table(table_data):
