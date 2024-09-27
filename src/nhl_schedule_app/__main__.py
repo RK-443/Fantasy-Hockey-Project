@@ -57,6 +57,7 @@ def get_url_schedule(input_week=-1):
 
     return URL
 
+#Todo validate week function in order to validate if week is within limits
 
 #-------- main --------
 page_data=get_page_data("https://hockey.fantasysports.yahoo.com/hockey/team_games?week=1")
