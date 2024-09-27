@@ -16,8 +16,12 @@ from bs4 import BeautifulSoup
 #print(soup.prettify())
 
 current_date=datetime.datetime.now()
+date=datetime.datetime(2024,12,30)
+season_start=datetime.datetime(2024,10,7)
 
-print(current_date.month)
+#print(current_date.isocalendar().week)
+#print(date.isocalendar().week)
+print(season_start.isocalendar().week)
 
 #*data=[]
 #for row in table.find_all('tr'):
