@@ -45,7 +45,7 @@ def parse_table(table_data):
 
 #get_url_schedule function will return the url of the current the week (if before oct 7 by default week will be 1)
 def get_url_schedule(input_week=-1):                                          #will save current date
-    week_number=None                                                
+    week_number=input_week                                                
 
     if input_week==-1:
         current_date=datetime.datetime.now() 
