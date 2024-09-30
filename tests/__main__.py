@@ -15,14 +15,36 @@ from bs4 import BeautifulSoup
 #-------- testing grounds for parsing data (JS) --------  
 #print(soup.prettify())
 
+
+def validate_week(input_date):
+    output_week=-1
+
+    if input_date.isocalendar().week<41 and input_date.year==2024:             #Before season start
+        output_week=1
+    elif input_date.isocalendar().week>=41 and input_date.year==2024:          #During the season for 2024
+        output_week=input_date.isocalendar().week-40
+    elif input_date.isocalendar().week<=15 and input_date.year==2025:          #During the season for 2025
+        output_week=input_date.isocalendar().week+12
+    elif input_date.isocalendar().week==16:                                             #Rare exception for last week with 10 days
+        output_week=25
+
+    return output_week
+
+
+
+
 current_date=datetime.datetime.now()
-date=datetime.datetime(2024,12,30)\
+date=datetime.datetime(2024,12,30)
+
+
 
 season_start=datetime.datetime(2024,10,7)
 season_end=datetime.datetime(2025,4,17)
 
+print(validate_week(date))
+
 #print(current_date.isocalendar().week)
-print(date.isocalendar().week)
+#print(date.isocalendar().week)
 #print(season_start.isocalendar().week)
 #print(season_end.isocalendar().week)
 
