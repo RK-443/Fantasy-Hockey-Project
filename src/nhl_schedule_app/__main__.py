@@ -55,9 +55,9 @@ def get_url_schedule(input_week=-1):
         print("The entered week is not valid. Must be within 1-25. Week 1 will be displayed")
         week_number=0
 
-    URL="https://hockey.fantasysports.yahoo.com/hockey/team_games?week="+str(week_number)
+    generated_url="https://hockey.fantasysports.yahoo.com/hockey/team_games?week="+str(week_number)
 
-    return URL
+    return generated_url
 
 #validate_week will return the week of the [1-25]
 def validate_week(input_date):
@@ -76,6 +76,7 @@ def validate_week(input_date):
 
 
 #-------- main --------
-page_data=get_page_data("https://hockey.fantasysports.yahoo.com/hockey/team_games?week=1")
+get_url_schedule(-1)
+page_data=get_page_data(URL)
 all_schedules=get_all_schedules()
 #print(all_schedules)
