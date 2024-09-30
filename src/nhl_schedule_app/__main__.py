@@ -73,6 +73,8 @@ def validate_week(input_date):
 
     return output_week
 
+#Todo function to select which Team(s) to select data from
+
 
 #-------- main --------
 URL=get_url_schedule(-1)
