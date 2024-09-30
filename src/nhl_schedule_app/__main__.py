@@ -44,12 +44,11 @@ def parse_table(table_data):
     return table_data
 
 #get_url_schedule function will return the url of the current the week (if before oct 7 by default week will be 1)
-def get_url_schedule(input_week=-1):
-    current_date=datetime.datetime.now()                                                #will save current date
+def get_url_schedule(input_week=-1):                                          #will save current date
     week_number=None                                                
 
     if input_week==-1:
-        current_date=datetime.datetime.now  
+        current_date=datetime.datetime.now() 
         week_number=validate_week(current_date)
     elif input_week<-1 and input_week>25:
         print("The entered week is not valid. Must be within 1-25. Week 1 will be displayed")
@@ -62,7 +61,7 @@ def get_url_schedule(input_week=-1):
 #validate_week will return the week of the [1-25]
 def validate_week(input_date):
     output_week=0
-
+    print(type(input_date))
     if input_date.isocalendar().week<41 and input_date.year==2024:                      #Before season start
         output_week=1
     elif input_date.isocalendar().week>=41 and input_date.year==2024:                   #During the season for 2024
@@ -79,4 +78,4 @@ def validate_week(input_date):
 URL=get_url_schedule(-1)
 page_data=get_page_data(URL)
 all_schedules=get_all_schedules()
-#print(all_schedules)
+print(all_schedules)
