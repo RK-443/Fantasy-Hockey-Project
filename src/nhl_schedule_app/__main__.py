@@ -46,14 +46,16 @@ def parse_table(table_data):
 #get_url_schedule function will return the url of the current the week (if before oct 7 by default week will be 1)
 def get_url_schedule(input_week=-1):
     current_date=datetime.datetime.now()                                                #will save current date
-    output_week=None                                                
+    week_number=None                                                
 
     if input_week==-1:
         current_date=datetime.datetime.now  
-    elif input_week>=1 and input_week<=25:
-        URL="https://hockey.fantasysports.yahoo.com/hockey/team_games?week="+str(input_week)
-    else:
-        print("The entered week is not valid. Must be within 1-25")
+        week_number=validate_week(current_date)
+    elif input_week<-1 and input_week>25:
+        print("The entered week is not valid. Must be within 1-25. Week 1 will be displayed")
+        week_number=0
+
+    URL="https://hockey.fantasysports.yahoo.com/hockey/team_games?week="+str(week_number)
 
     return URL
 
