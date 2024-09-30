@@ -16,12 +16,15 @@ from bs4 import BeautifulSoup
 #print(soup.prettify())
 
 current_date=datetime.datetime.now()
-date=datetime.datetime(2024,12,30)
+date=datetime.datetime(2024,12,30)\
+
 season_start=datetime.datetime(2024,10,7)
+season_end=datetime.datetime(2025,4,17)
 
 #print(current_date.isocalendar().week)
-#print(date.isocalendar().week)
-print(season_start.isocalendar().week)
+print(date.isocalendar().week)
+#print(season_start.isocalendar().week)
+#print(season_end.isocalendar().week)
 
 #*data=[]
 #for row in table.find_all('tr'):
