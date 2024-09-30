@@ -57,7 +57,21 @@ def get_url_schedule(input_week=-1):
 
     return URL
 
-#Todo validate week function in order to validate if week is within limits
+#validate_week will return the week of the [1-25]
+def validate_week(input_date):
+    output_week=0
+
+    if input_date.isocalendar().week<41 and input_date.year==2024:                      #Before season start
+        output_week=1
+    elif input_date.isocalendar().week>=41 and input_date.year==2024:                   #During the season for 2024
+        output_week=input_date.isocalendar().week-40
+    elif input_date.isocalendar().week<=15 and input_date.year==2025:                   #During the season for 2025
+        output_week=input_date.isocalendar().week+12
+    elif input_date.isocalendar().week==16:                                             #Rare exception for last week with 10 days
+        output_week=25
+
+    return output_week
+
 
 #-------- main --------
 page_data=get_page_data("https://hockey.fantasysports.yahoo.com/hockey/team_games?week=1")
