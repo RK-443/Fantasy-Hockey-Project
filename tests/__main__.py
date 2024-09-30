@@ -41,7 +41,7 @@ date=datetime.datetime(2024,12,30)
 season_start=datetime.datetime(2024,10,7)
 season_end=datetime.datetime(2025,4,17)
 
-print(validate_week(date))
+print(validate_week(current_date))
 
 #print(current_date.isocalendar().week)
 #print(date.isocalendar().week)
