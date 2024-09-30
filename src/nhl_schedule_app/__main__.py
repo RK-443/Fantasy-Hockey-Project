@@ -76,7 +76,7 @@ def validate_week(input_date):
 
 
 #-------- main --------
-get_url_schedule(-1)
+URL=get_url_schedule(-1)
 page_data=get_page_data(URL)
 all_schedules=get_all_schedules()
 #print(all_schedules)
