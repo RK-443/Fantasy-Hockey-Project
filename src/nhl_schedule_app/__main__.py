@@ -74,10 +74,12 @@ def validate_week(input_date):
     return output_week
 
 #get_team_schedule returns the number of games played from the team entered in parameter
-def get_team_schedule(all_schedules, input_team):
+def get_team_schedule(input_schedules):
     team_schedule=0
 
-    for schedule in all_schedules:
+    input_team=input('Enter team name: ')
+
+    for schedule in input_schedules:
         if schedule[0]==input_team:
             team_schedule=schedule[1]
     
@@ -90,5 +92,5 @@ def get_team_schedule(all_schedules, input_team):
 #-------- main --------
 URL=get_url_schedule(1)
 page_data=get_page_data(URL)
-all_schedules=get_all_schedules()
+get_all_schedules()
 print(all_schedules)
