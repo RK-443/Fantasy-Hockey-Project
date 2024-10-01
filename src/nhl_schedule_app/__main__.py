@@ -73,7 +73,18 @@ def validate_week(input_date):
 
     return output_week
 
-#Todo function to select which Team(s) to select data from
+#get_team_schedule returns the number of games played from the team entered in parameter
+def get_team_schedule(input_team):
+    team_schedule=0
+
+    for schedule in all_schedules:
+        if schedule[0]==input_team:
+            team_schedule=schedule[1]
+    
+    if team_schedule==0:
+        print("Team not found")
+
+    return team_schedule
 
 
 #-------- main --------
