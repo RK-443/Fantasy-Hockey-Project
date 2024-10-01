@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 URL=None                                
 page_data=None                                                                          #will contain page data in HTML (soup)
 all_schedules=[[0]*2 for _ in range(32)]                                                #contains weekly schedules of all teams. Initialized 2D array with 2 col & 32 rows for 32 teams
-
+selected_week=0                                                                         #saves the selected week for schedule                      
 
 #-------- functions --------
 
