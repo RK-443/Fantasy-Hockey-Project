@@ -39,10 +39,6 @@ def get_all_schedules():
     
     return all_schedules
 
-#parse_table function will read & return the required data for schedules using the table as a parameter
-def parse_table(table_data):
-    return table_data
-
 #get_url_schedule function will return the url of the current the week (if before oct 7 by default week will be 1. Todo take input and validate week
 def get_url_schedule(input_week=-1):                                          
     week_number=input_week                                                              #will save current date
