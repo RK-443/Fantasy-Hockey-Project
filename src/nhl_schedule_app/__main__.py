@@ -84,7 +84,7 @@ def get_team_schedule():
 
     return team_schedule
 
-#team_exists function, validates if team exists using city name or team name. Returns index of team for all_schedules todo fix teams names with 2 words
+#team_exists function, validates if team exists using city name or team name. Returns index of team for all_schedules todo fix teams names with 2 words. Todo change input validation tolower?
 def team_exists(input_team):
     team_index=None                                                                        #index used tracking team in all_schedules
     index=0
@@ -97,6 +97,7 @@ def team_exists(input_team):
 
         if len(team_full_name)==3:
             team_name=team_full_name[1]+team_full_name[2]
+        
         
         if input_team==team_city or input_team==team_name:
             team_index=index
