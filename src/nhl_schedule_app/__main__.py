@@ -84,7 +84,7 @@ def get_team_schedule(input_schedules=all_schedules):
 
     return team_schedule
 
-#team_exists function, validates if team exists using city name or team name
+#team_exists function, validates if team exists using city name or team name. Returns index of team for all_schedules
 def team_exists():
     return None
 
