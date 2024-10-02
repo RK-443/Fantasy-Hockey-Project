@@ -84,6 +84,8 @@ def get_team_schedule(input_schedules=all_schedules):
 
     return team_schedule
 
+#todo get_input schedule
+
 
 #-------- main --------
 URL=get_url_schedule(1)
