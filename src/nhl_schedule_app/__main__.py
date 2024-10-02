@@ -88,18 +88,20 @@ def get_team_schedule():
 def team_exists(input_team):
     team_index=None                                                                        #index used tracking team in all_schedules
     index=0
-                                                                                            
+
     for team in all_schedules:
         team_full_name=team[0].split(" ")
         team_city=team_full_name[0]
         team_name=None
         
 
-        if team_full_name.length()==3:
+        if len(team_full_name)==3:
             team_name=team_full_name[1]+team_full_name[2]
         
         if input_team==team_city or input_team==team_name:
+            team_index=index
 
+        index+=1
 
 
     return team_index
@@ -111,4 +113,5 @@ def team_exists(input_team):
 URL=get_url_schedule(1)
 page_data=get_page_data(URL)
 get_all_schedules()
-print(get_team_schedule())
+print(team_exists("Dallas"))
+#print(get_team_schedule())
