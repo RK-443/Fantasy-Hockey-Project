@@ -113,5 +113,5 @@ def team_exists(input_team):
 URL=get_url_schedule(1)
 page_data=get_page_data(URL)
 get_all_schedules()
-print(team_exists("Dallas"))
+print(team_exists("Red Wings"))
 #print(get_team_schedule())
