@@ -85,8 +85,24 @@ def get_team_schedule():
     return team_schedule
 
 #team_exists function, validates if team exists using city name or team name. Returns index of team for all_schedules
-def team_exists():
-    return None
+def team_exists(input_team):
+    team_index=None                                                                        #index used tracking team in all_schedules
+    index=0
+                                                                                            
+    for team in all_schedules:
+        team_full_name=team[0].split(" ")
+        team_city=team_full_name[0]
+        team_name=None
+        
+
+        if team_full_name.length()==3:
+            team_name=team_full_name[1]+team_full_name[2]
+        
+        if input_team==team_city or input_team==team_name:
+
+
+
+    return team_index
 
 #todo get_input schedule
 
