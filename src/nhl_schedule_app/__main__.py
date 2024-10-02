@@ -90,16 +90,9 @@ def team_exists(input_team):
     index=0
 
     for team in all_schedules:
-        team_full_name=team[0].split(" ")
-        team_city=team_full_name[0]
-        team_name=None
-        
+        team_full_name=team[0].lower()
 
-        if len(team_full_name)==3:
-            team_name=team_full_name[1]+team_full_name[2]
-        
-        
-        if input_team==team_city or input_team==team_name:
+        if input_team.lower() in team_full_name:
             team_index=index
 
         index+=1
@@ -114,5 +107,5 @@ def team_exists(input_team):
 URL=get_url_schedule(1)
 page_data=get_page_data(URL)
 get_all_schedules()
-print(team_exists("Red Wings"))
+print(team_exists("leafs"))
 #print(get_team_schedule())
