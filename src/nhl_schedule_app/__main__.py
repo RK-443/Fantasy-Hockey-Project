@@ -17,7 +17,7 @@ selected_week=-1                                                                
 def get_page_data(URL):
     data=requests.get(URL)
     soup= BeautifulSoup(data.content,'html5lib')
-    return soup
+    return soup  
 
 #get_all_schedules function will return table of teams and the number of games to play in an array. 2x32
 def get_all_schedules():
@@ -122,16 +122,15 @@ while active_menu:
     selected_menu=input()
     selected_menu.strip()
 
-    if selected_menu=="1":
+    if selected_menu=="1":                                                                  #Current week's schedule
         get_all_schedules()
         print(all_schedules)
-    elif selected_menu=="2":
+    elif selected_menu=="2":                                                                #Selected week's schedule
         selected_week=get_input_week()
         URL=get_url_schedule(selected_week)
         page_data=get_page_data(URL)
         print(get_all_schedules())
-
-    elif selected_menu=="3":
+    elif selected_menu=="3":                                                                #Selected team's schedule for current week
         selected_team=input()
         team_schedule=get_team_schedule(selected_team)
         
@@ -139,7 +138,7 @@ while active_menu:
             print(team_schedule)
         else:
             print("Entered team does not exist")
-    elif selected_team=="4":
+    elif selected_team=="4":                                                                #Selected team's Schedule for specified week
         selected_week=get_input_week()
         get_url_schedule(selected_week)
         page_data=get_page_data(URL)
