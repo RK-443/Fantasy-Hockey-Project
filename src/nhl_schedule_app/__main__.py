@@ -100,8 +100,59 @@ def team_exists(input_team):
 
 
 #-------- main --------
-URL=get_url_schedule(1)
-page_data=get_page_data(URL)
-get_all_schedules()
-print(team_exists("leafs"))
-#print(get_team_schedule())
+active_menu=True
+selected_team=None
+
+while active_menu:
+    print("Welcome to the NHL Schedule App\n By Rayan Kharroubi")
+    print("1-   Get this week's schedule for league")
+    print("2-   Get exact week's schedule for league")
+    print("3-   Get specified team's schedule for this week")
+    print("4-   Get specified team's for certain week")
+    print("5-   Exit\n")
+    print("Enter a digit from 1- to select an option:   ")
+
+
+    selected_menu=input()
+    selected_menu.strip()
+
+    URL=get_url_schedule()
+
+    if selected_menu=="1":
+        print(all_schedules)
+    elif selected_menu=="2":
+        print("Enter selected week: ")
+        selected_week=int(input())
+        get_url_schedule(selected_week)
+        page_data=get_page_data(URL)
+        print(get_all_schedules())
+
+    elif selected_menu=="3":
+        selected_team=input()
+        team_schedule=get_team_schedule(selected_team)
+        
+        if team_schedule !=0:
+            print(team_schedule)
+        else:
+            print("Entered team does not exist")
+    elif selected_team=="4":
+        print("Enter selected week: ")
+        selected_week=int(input())
+        get_url_schedule(selected_week)
+        page_data=get_page_data(URL)
+        get_all_schedules()
+
+        selected_team=input()
+        team_schedule=get_team_schedule(selected_team)
+        
+        if team_schedule !=0:
+            print(team_schedule)
+        else:
+            print("Entered team does not exist")
+    elif selected_menu=="5":
+        active_menu=False
+
+        
+    
+    #print(team_exists("leafs"))
+    #print(get_team_schedule())
