@@ -70,17 +70,13 @@ def validate_week(input_date):
     return output_week
 
 #get_team_schedule returns the number of games played from the team entered in parameter
-def get_team_schedule():
+def get_team_schedule(input_team):
     team_schedule=0
+    team_index=team_exists(input_team)                                              #input for team name
 
-    input_team=input('Enter team name: ')                                               #input for team name
+    if (team_index==-1):                                                   #if team is found, saves number of games for the week
+        team_schedule=all_schedules[team_index][1]
 
-    for schedule in all_schedules:
-        if schedule[0]==input_team:                                                     #if team is found, saves number of games for the week
-            team_schedule=schedule[1]
-    
-    if team_schedule==0:                                                                #if no team is found, print out error
-        print("Team not found")
 
     return team_schedule
 
