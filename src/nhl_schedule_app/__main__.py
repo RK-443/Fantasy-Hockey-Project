@@ -96,7 +96,11 @@ def team_exists(input_team):
 
     return team_index
 
-#todo get_input schedule
+#get_input_week will return user's input for selected week
+def get_input_week():
+    print("Enter selected week: ")
+    input_week=int(input())
+    return input_week
 
 
 #-------- main --------
@@ -122,8 +126,6 @@ while active_menu:
         get_all_schedules()
         print(all_schedules)
     elif selected_menu=="2":
-        print("Enter selected week: ")
-        selected_week=int(input())
         URL=get_url_schedule(selected_week)
         page_data=get_page_data(URL)
         print(get_all_schedules())
