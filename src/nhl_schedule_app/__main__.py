@@ -57,7 +57,7 @@ def get_url_schedule(input_week=-1):
 #validate_week will return the week of the [1-25]
 def validate_week(input_date):
     output_week=0
-    print(type(input_date))
+
     if input_date.isocalendar().week<41 and input_date.year==2024:                      #Before season start
         output_week=1
     elif input_date.isocalendar().week>=41 and input_date.year==2024:                   #During the season for 2024
