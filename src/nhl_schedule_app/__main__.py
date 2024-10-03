@@ -102,6 +102,8 @@ def team_exists(input_team):
 #-------- main --------
 active_menu=True
 selected_team=None
+URL=get_url_schedule()
+page_data=get_page_data(URL)
 
 while active_menu:
     print("Welcome to the NHL Schedule App\n By Rayan Kharroubi")
@@ -116,9 +118,8 @@ while active_menu:
     selected_menu=input()
     selected_menu.strip()
 
-    URL=get_url_schedule()
-
     if selected_menu=="1":
+        get_all_schedules()
         print(all_schedules)
     elif selected_menu=="2":
         print("Enter selected week: ")
