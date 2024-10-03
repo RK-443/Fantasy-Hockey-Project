@@ -102,16 +102,6 @@ def get_input_week():
     input_week=int(input())
     return input_week
 
-def get_input_team():
-    input_team=input().strip()
-    team_schedule=get_team_schedule(selected_team)    
-    if team_schedule !=0:
-        print(team_schedule)
-    else:
-        print("Entered team does not exist")                        
-    return 
-
-
 #-------- main --------
 active_menu=True
 selected_team=None
