@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 URL=None                                
 page_data=None                                                                          #will contain page data in HTML (soup)
 all_schedules=[[0]*2 for _ in range(32)]                                                #contains weekly schedules of all teams. Initialized 2D array with 2 col & 32 rows for 32 teams
-selected_week=0                                                                         #saves the selected week for schedule                      
+selected_week=-1                                                                         #saves the selected week for schedule                      
 
 #-------- functions --------
 
@@ -126,6 +126,7 @@ while active_menu:
         get_all_schedules()
         print(all_schedules)
     elif selected_menu=="2":
+        selected_week=get_input_week()
         URL=get_url_schedule(selected_week)
         page_data=get_page_data(URL)
         print(get_all_schedules())
@@ -139,8 +140,7 @@ while active_menu:
         else:
             print("Entered team does not exist")
     elif selected_team=="4":
-        print("Enter selected week: ")
-        selected_week=int(input())
+        selected_week=get_input_week()
         get_url_schedule(selected_week)
         page_data=get_page_data(URL)
         get_all_schedules()
