@@ -124,7 +124,7 @@ while active_menu:
     elif selected_menu=="2":
         print("Enter selected week: ")
         selected_week=int(input())
-        get_url_schedule(selected_week)
+        URL=get_url_schedule(selected_week)
         page_data=get_page_data(URL)
         print(get_all_schedules())
 
