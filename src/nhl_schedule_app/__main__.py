@@ -151,6 +151,7 @@ while active_menu:
         else:
             print("Entered team does not exist")
     elif selected_menu=="5":
+        print("Goodbye")
         active_menu=False
 
         
