@@ -133,13 +133,13 @@ set_page_data(globals()["URL"])
 set_all_schedules()
 
 while active_menu:
-    print("Welcome to the NHL Schedule App\n By Rayan Kharroubi")
+    print("Welcome to the NHL Schedule App By Rayan Kharroubi \n")
     print("1-   Get this week's schedule for league")
     print("2-   Get exact week's schedule for league")
     print("3-   Get specified team's schedule for this week")
     print("4-   Get specified team's for certain week")
     print("5-   Exit\n")
-    print("Enter a digit from 1- to select an option:   ")
+    print("Enter a digit from 1-5 to select an option:   ")
 
 
     selected_menu=input()
