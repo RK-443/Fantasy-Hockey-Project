@@ -122,6 +122,7 @@ def search_team():
 
     print("Nb of Games for "+selected_team+" for Week "+str(selected_week)+": "+str(team_schedule))
 
+#todo print function for array when displaying
 
 #-------- main --------
 active_menu=True
@@ -164,7 +165,6 @@ while active_menu:
         print("Goodbye")
         active_menu=False
 
-        
-    
-    #print(team_exists("leafs"))
-    #print(get_team_schedule())
+#todo list
+#clean up comments
+#revise README
