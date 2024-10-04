@@ -160,14 +160,7 @@ while active_menu:
         selected_week=get_input_week()
         refresh_schedules()
         set_all_schedules()
-
-        selected_team=input()
-        team_schedule=get_team_schedule(selected_team)
-        
-        if team_schedule !=0:
-            print(team_schedule)
-        else:
-            print("Entered team does not exist")
+        search_team()
     elif selected_menu=="5":
         print("Goodbye")
         active_menu=False
