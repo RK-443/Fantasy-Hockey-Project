@@ -46,7 +46,7 @@ def get_url_schedule(input_week=-1):
     if input_week==-1:                                                                  
         current_date=datetime.datetime.now() 
         week_number=validate_week(current_date)                                         #validates input
-        selected_week=week_number
+        globals()["selected_week"]=week_number
     elif input_week<-1 and input_week>25:
         print("The entered week is not valid. Must be within 1-25. Week 1 will be displayed")
         week_number=0
