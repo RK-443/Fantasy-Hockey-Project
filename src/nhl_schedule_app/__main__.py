@@ -147,16 +147,17 @@ while active_menu:
         print(all_schedules)
     elif selected_menu=="2":                                                                #Selected week's schedule
         selected_week=get_input_week()
-        URL=get_url_schedule(selected_week)
-        page_data=get_page_data(URL)
-        print(get_all_schedules())
+        set_url_schedule(selected_week)
+        set_page_data(globals()["URL"])
+        set_all_schedules()
+        print(globals()["all_schedules"])
     elif selected_menu=="3":                                                                #Selected team's schedule for current week
         print(search_team())
     elif selected_team=="4":                                                                #Selected team's Schedule for specified week
         selected_week=get_input_week()
-        get_url_schedule(selected_week)
-        page_data=get_page_data(URL)
-        get_all_schedules()
+        set_url_schedule(selected_week)
+        set_page_data(globals()["URL"])
+        set_all_schedules()
 
         selected_team=input()
         team_schedule=get_team_schedule(selected_team)
