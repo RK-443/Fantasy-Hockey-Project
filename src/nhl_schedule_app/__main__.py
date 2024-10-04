@@ -40,8 +40,8 @@ def set_all_schedules():
     
     globals()["all_schedules"]=array_schedules
 
-#get_url_schedule function will return the url of the current the week (if before oct 7 by default week will be 1. Todo take input and validate week
-def get_url_schedule(input_week=-1):                                          
+#set_url_schedule function will set the url of the current the week by default (if before oct 7 by default week will be 1. Todo take input and validate week
+def set_url_schedule(input_week=-1):                                          
     week_number=input_week                                                              #will save current date
 
     if input_week==-1:                                                                  
@@ -52,9 +52,8 @@ def get_url_schedule(input_week=-1):
         print("The entered week is not valid. Must be within 1-25. Week 1 will be displayed")
         week_number=0
 
-    generated_url="https://hockey.fantasysports.yahoo.com/hockey/team_games?week="+str(week_number)
+    globals()["URL"]="https://hockey.fantasysports.yahoo.com/hockey/team_games?week="+str(week_number)
 
-    return generated_url
 
 #validate_week will return the week of the [1-25]
 def validate_week(input_date):
@@ -126,8 +125,8 @@ active_menu=True
 selected_team=None
 selected_week=-1
 all_schedules=[[0]*2 for _ in range(32)]     
-URL=get_url_schedule()
-set_page_data(URL)
+set_url_schedule()
+set_page_data(globals()["URL"])
 set_all_schedules()
 
 while active_menu:
