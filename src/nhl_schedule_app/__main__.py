@@ -39,7 +39,6 @@ def set_all_schedules():
         index+=1
     
     globals()["all_schedules"]=array_schedules
-    return all_schedules
 
 #get_url_schedule function will return the url of the current the week (if before oct 7 by default week will be 1. Todo take input and validate week
 def get_url_schedule(input_week=-1):                                          
