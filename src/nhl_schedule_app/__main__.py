@@ -14,10 +14,10 @@ global selected_week                                                            
 #-------- functions --------
 
 #getPageData function will scrape/pull all HTML code using the URL parameter
-def get_page_data(URL):
+def set_page_data(URL):
     data=requests.get(URL)
     soup= BeautifulSoup(data.content,'html5lib')
-    return soup  
+    globals()["page_data"]=soup  
 
 #get_all_schedules function will return table of teams and the number of games to play in an array. 2x32
 def get_all_schedules():
@@ -126,7 +126,7 @@ selected_team=None
 selected_week=-1
 all_schedules=[[0]*2 for _ in range(32)]     
 URL=get_url_schedule()
-page_data=get_page_data(URL)
+set_page_data(URL)
 get_all_schedules()
 
 while active_menu:
