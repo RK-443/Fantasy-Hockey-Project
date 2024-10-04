@@ -74,7 +74,7 @@ def get_team_schedule(input_team):
     team_schedule=0
     team_index=team_exists(input_team)                                              #input for team name
 
-    if (team_index==-1):                                                   #if team is found, saves number of games for the week
+    if (team_index!=-1):                                                   #if team is found, saves number of games for the week
         team_schedule=all_schedules[team_index][1]
 
 
@@ -92,7 +92,6 @@ def team_exists(input_team):
             team_index=index
 
         index+=1
-
 
     return team_index
 
