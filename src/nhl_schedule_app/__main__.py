@@ -54,6 +54,10 @@ def set_url_schedule(input_week=-1):
 
     globals()["URL"]="https://hockey.fantasysports.yahoo.com/hockey/team_games?week="+str(week_number)
 
+#refresh_schdules function will call up 2 functions in order fetch new required data
+def refresh_schedules():
+    set_page_data(globals()["URL"])
+    set_all_schedules()
 
 #validate_week will return the week of the [1-25]
 def validate_week(input_date):
@@ -148,15 +152,13 @@ while active_menu:
     elif selected_menu=="2":                                                                #Selected week's schedule
         selected_week=get_input_week()
         set_url_schedule(selected_week)
-        set_page_data(globals()["URL"])
-        set_all_schedules()
+        refresh_schedules()
         print(globals()["all_schedules"])
     elif selected_menu=="3":                                                                #Selected team's schedule for current week
         print(search_team())
     elif selected_team=="4":                                                                #Selected team's Schedule for specified week
         selected_week=get_input_week()
-        set_url_schedule(selected_week)
-        set_page_data(globals()["URL"])
+        refresh_schedules()
         set_all_schedules()
 
         selected_team=input()
