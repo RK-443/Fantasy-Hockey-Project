@@ -13,7 +13,7 @@ global selected_week                                                            
 
 #-------- functions --------
 
-#getPageData function will scrape/pull all HTML code using the URL parameter
+#set_page_data function will scrape/pull all HTML code using the URL parameter
 def set_page_data(URL):
     data=requests.get(URL)
     soup= BeautifulSoup(data.content,'html5lib')
