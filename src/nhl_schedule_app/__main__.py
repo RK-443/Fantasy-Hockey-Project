@@ -155,7 +155,7 @@ while active_menu:
         refresh_schedules()
         print(globals()["all_schedules"])
     elif selected_menu=="3":                                                                #Selected team's schedule for current week
-        print(search_team())
+        search_team()
     elif selected_team=="4":                                                                #Selected team's Schedule for specified week
         selected_week=get_input_week()
         refresh_schedules()
