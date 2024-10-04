@@ -102,6 +102,22 @@ def get_input_week():
     input_week=int(input())
     return input_week
 
+#search_team function manages input and validation or search. & 
+def search_team():
+    team_search=True
+
+    while team_search:
+        print("Enter team name or ciity:    ")
+        selected_team=input()
+        team_schedule=get_team_schedule(selected_team)
+        
+        if team_schedule !=0:
+            team_search=False
+        else:
+            print("Entered team does not exist")
+    return team_schedule
+
+
 #-------- main --------
 active_menu=True
 selected_team=None
