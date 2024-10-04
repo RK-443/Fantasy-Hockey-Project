@@ -116,7 +116,7 @@ def search_team():
         else:
             print("Entered team does not exist")
 
-    print("Nb of Games for: "+selected_team+" on Week: "+selected_week)
+    print("Nb of Games for: "+selected_team+" on Week: "+str(selected_week))
     return team_schedule
 
 
