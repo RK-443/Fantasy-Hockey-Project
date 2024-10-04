@@ -123,6 +123,7 @@ def search_team():
 #-------- main --------
 active_menu=True
 selected_team=None
+selected_week=-1
 all_schedules=[[0]*2 for _ in range(32)]     
 URL=get_url_schedule()
 page_data=get_page_data(URL)
