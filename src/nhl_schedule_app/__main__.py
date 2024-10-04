@@ -19,12 +19,13 @@ def set_page_data(URL):
     soup= BeautifulSoup(data.content,'html5lib')
     globals()["page_data"]=soup  
 
-#get_all_schedules function will return table of teams and the number of games to play in an array. 2x32
-def get_all_schedules():
+#set_all_schedules function will set table of teams and the number of games to play in an array. 2x32
+def set_all_schedules():
 
     table=page_data.find('table') 
     table_body=table.find('tbody')
     rows=table_body.find_all('tr')
+    array_schedules=[[0]*2 for _ in range(32)] 
 
     index=0
 
@@ -32,11 +33,12 @@ def get_all_schedules():
         team_name=row.find('td', {"class":"Alt Last name first Tst-team"}).text         #stores team name of the row
         nb_games=row.find('td', {"class":"stat Tst-games"}).text                        #stores nb of games played 
 
-        all_schedules[index][0]=team_name
-        all_schedules[index][1]=nb_games
+        array_schedules[index][0]=team_name
+        array_schedules[index][1]=nb_games
         
         index+=1
     
+    globals()["all_schedules"]=array_schedules
     return all_schedules
 
 #get_url_schedule function will return the url of the current the week (if before oct 7 by default week will be 1. Todo take input and validate week
@@ -127,7 +129,7 @@ selected_week=-1
 all_schedules=[[0]*2 for _ in range(32)]     
 URL=get_url_schedule()
 set_page_data(URL)
-get_all_schedules()
+set_all_schedules()
 
 while active_menu:
     print("Welcome to the NHL Schedule App\n By Rayan Kharroubi")
@@ -143,7 +145,7 @@ while active_menu:
     selected_menu.strip()
 
     if selected_menu=="1":                                                                  #Current week's schedule
-        get_all_schedules()
+        set_all_schedules()
         print(all_schedules)
     elif selected_menu=="2":                                                                #Selected week's schedule
         selected_week=get_input_week()
