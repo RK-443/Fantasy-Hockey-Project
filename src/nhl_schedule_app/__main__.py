@@ -40,7 +40,7 @@ def set_all_schedules():
     
     globals()["all_schedules"]=array_schedules
 
-#set_url_schedule function will set the url of the current the week by default (if before oct 7 by default week will be 1. Todo take input and validate week
+#set_url_schedule function will set the url of the current the week by default (if before oct 7 by default week will be 1. 
 def set_url_schedule(input_week=-1):                                          
     week_number=input_week                                                              #will save current date
 
