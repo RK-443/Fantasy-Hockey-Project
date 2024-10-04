@@ -123,6 +123,7 @@ active_menu=True
 selected_team=None
 URL=get_url_schedule()
 page_data=get_page_data(URL)
+get_all_schedules()
 
 while active_menu:
     print("Welcome to the NHL Schedule App\n By Rayan Kharroubi")
@@ -146,13 +147,7 @@ while active_menu:
         page_data=get_page_data(URL)
         print(get_all_schedules())
     elif selected_menu=="3":                                                                #Selected team's schedule for current week
-        selected_team=input()
-        team_schedule=get_team_schedule(selected_team)
-        
-        if team_schedule !=0:
-            print(team_schedule)
-        else:
-            print("Entered team does not exist")
+        print(search_team())
     elif selected_team=="4":                                                                #Selected team's Schedule for specified week
         selected_week=get_input_week()
         get_url_schedule(selected_week)
