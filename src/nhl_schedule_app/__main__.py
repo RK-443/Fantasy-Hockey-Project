@@ -107,7 +107,7 @@ def search_team():
     team_search=True
 
     while team_search:
-        print("Enter team name or ciity:    ")
+        print("Enter team name or city:    ")
         selected_team=input()
         team_schedule=get_team_schedule(selected_team)
         
@@ -116,7 +116,7 @@ def search_team():
         else:
             print("Entered team does not exist")
 
-    print("Nb of Games for: "+selected_team+" on Week: "+str(selected_week))
+    print("Nb of Games for "+selected_team+" for Week "+str(selected_week)+": "+selected_week)
     return team_schedule
 
 
