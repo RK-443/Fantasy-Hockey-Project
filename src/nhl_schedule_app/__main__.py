@@ -106,7 +106,7 @@ def get_input_week():
     input_week=int(input())
     return input_week
 
-#search_team function manages input and validation or search. & 
+#search_team function manages input and validation or search for a team. Prints result when team found
 def search_team():
     team_search=True
 
